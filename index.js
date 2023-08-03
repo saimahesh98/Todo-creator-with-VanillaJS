@@ -78,20 +78,20 @@ function updateDisplay(newTodo) {
             // inputelement.setAttribute("disabled", false);
             this.remove();
             editdiv.append(saveButton);
+        });
 
-            saveButton.addEventListener("click", function(){
-                inputelementAfter = saveButton.parentElement.parentElement.children[1].firstChild
-                if (inputelementAfter.value !== ""){
-                    saveButton.parentElement.parentElement.children[1].firstChild.disabled = true;
-                    saveButton.remove();
-                    editdiv.append(editButton);
-                }
-                else{
-                    alert("ToDo Empty! enter ToDo")
-                }
-                
-            })
-        })
+        saveButton.addEventListener("click", function(){
+        inputelementAfter = saveButton.parentElement.parentElement.children[1].firstChild
+        if (inputelementAfter.value !== ""){
+            saveButton.parentElement.parentElement.children[1].firstChild.disabled = true;
+            saveButton.remove();
+            editdiv.append(editButton);
+        }
+        else{
+            alert("ToDo Empty! enter ToDo")
+        }
+        
+        });
        
         //delete button
         let deletediv = document.createElement("div");
