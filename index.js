@@ -173,15 +173,24 @@ function checkIfNoElements(){
 
     if((document.querySelector("#todosDiv").childNodes).length>0){
         // document.querySelector(".third").style.visibility = "visible";
-        document.querySelectorAll(".multidel")[0].style.visibility = "visible";
-        document.querySelectorAll(".multidel")[1].style.visibility = "visible";
-    }
-    else{
-        // document.querySelector(".third").style.visibility = "hidden";
-        document.querySelectorAll(".multidel")[0].style.visibility = "hidden";
-        document.querySelectorAll(".multidel")[1].style.visibility = "hidden";
-    }
-    
+        // document.querySelectorAll(".multidel")[0].style.visibility = "visible";
+        // document.querySelectorAll(".multidel")[1].style.visibility = "visible";
+        document.querySelector(".allLists").addEventListener('mouseenter', function () {
+            if((document.querySelector("#todosDiv").childNodes).length>0){
+                document.querySelectorAll(".multidel")[0].style.visibility = "visible";
+                document.querySelectorAll(".multidel")[1].style.visibility = "visible";
+            }
+        })
+        document.querySelector(".allLists").addEventListener('mouseleave',  function () {
+            document.querySelectorAll(".multidel")[0].style.visibility = "hidden";
+            document.querySelectorAll(".multidel")[1].style.visibility = "hidden";
+        });
+        }
+        else{
+            // document.querySelector(".third").style.visibility = "hidden";
+            document.querySelectorAll(".multidel")[0].style.visibility = "hidden";
+            document.querySelectorAll(".multidel")[1].style.visibility = "hidden";
+        }
 }
 
 
